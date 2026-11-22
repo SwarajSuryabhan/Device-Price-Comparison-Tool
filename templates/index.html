@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E-Commerce Price Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+
+  <body>
+    <div class="page-shell">
+      <div class="container">
+        <div class="hero-section">
+          <div class="hero-badge">E-Commerce Price Analysis</div>
+          <h1>E-Commerce Price Analysis</h1>
+          <p class="subtitle">
+            Compare product prices across multiple e-commerce platforms instantly
+          </p>
+        </div>
+
+        <div class="search-panel">
+          <div class="search-box">
+            <input
+              type="text"
+              id="query"
+              placeholder="Enter product name like Apple iPhone 16 128GB Black"
+            />
+            <button onclick="comparePrices()">Compare Prices</button>
+          </div>
+
+          <div id="loading" class="loading hidden">
+            <span class="loader-dot"></span>
+            <span>Checking websites and comparing prices...</span>
+          </div>
+
+          <div id="message" class="message-box"></div>
+        </div>
+
+        <div class="content-grid">
+          <div class="left-panel">
+            <div class="section-card">
+              <div class="section-header">
+                <h2>Background Process</h2>
+                <span class="section-tag">Live Status</span>
+              </div>
+              <div id="debug" class="debug-box"></div>
+            </div>
+
+            <div class="section-card">
+              <div class="section-header">
+                <h2>Results</h2>
+                <span class="section-tag">Best Match</span>
+              </div>
+              <div id="results" class="results-grid"></div>
+            </div>
+          </div>
+
+          <div class="right-panel">
+            <div class="section-card history-card">
+              <div class="section-header">
+                <h2>Search History</h2>
+                <span class="section-tag">Recent Searches</span>
+              </div>
+              <div id="history" class="history-box"></div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="project-footer">
+          <p class="footer-title">This Website/Project is created by</p>
+          <p class="footer-name">Swaraj Suryabhan, Apurva Deshpande, Vyankatesh Chandekar</p>
+          <!-- <p class="footer-name">Apurva Deshpande</p>
+          <p class="footer-name">Vyankatesh Chandekar</p> -->
+        </footer>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
